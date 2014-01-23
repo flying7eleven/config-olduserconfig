@@ -1,0 +1,12 @@
+data.location=~/Dropbox/TaskWarrior
+weekstart=monday
+gc=on
+dateformat=Y-M-D
+dateformat.annotation=Y-M-D
+dateformat.edit=Y-M-D H:N:S
+dateformat.holiday=YMD
+dateformat.info=Y-M-D H:N:S
+dateformat.report=Y-M-D
+recurrence.limit=1
+task-web.user=<username>
+task-web.passwd=<password>

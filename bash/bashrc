@@ -1,0 +1,68 @@
+# Some parts are provided by Mike Stewart (http://MediaDoneRight.com)
+
+# source some other required scripts
+source ~/.bash_aliases
+source ~/.bash_colors
+if [ "$(uname -s)" == "Darwin" ]; then
+	source /opt/local/etc/profile.d/bash_completion.sh
+	source /opt/local/share/git-core/git-prompt.sh
+else
+	if [ -f /usr/share/git/completion/git-completion.bash ]; then
+		source /usr/share/git/completion/git-completion.bash
+	fi
+	if [ -f /usr/share/git/completion/git-prompt.sh ]; then
+		source /usr/share/git/completion/git-prompt.sh
+	fi
+fi
+
+#
+function git_branch { 
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/';
+}
+
+#
+function git_status {
+	git diff --quiet HEAD &>/dev/null
+	[[ $? == 1 ]] && tput setaf 1 || tput setaf 5
+}
+
+# if we're on a Mac, be sure that we get english command line output
+if [ "$(uname -s)" == "Darwin" ]; then
+	export LC_MESSAGES="en_US.UTF-8"
+fi
+
+#
+PHYSBASH=$(readlink -f ~/.bashrc)
+PHYSPATH=$(dirname $PHYSBASH)
+if [ "$(hostname)" == "zockepeter" ]; then
+	echo "Loaded shell scripts for the computer at home"
+	source $PHYSPATH/bash_paths.zockepeter
+elif [ "$(hostname)" == "imedv18" ]; then
+	echo "Loaded shell scripts for the computer at work"
+	source $PHYSPATH/bash_paths.imedv18
+fi
+
+# fix a bug with java apps and awesome
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# set the default editor which should be used
+export EDITOR="vim"
+
+# return value visualisation
+PS1=$IBlack$Time24h$Color_Off'$(git branch &>/dev/null;\
+if [ $? -eq 0 ]; then \
+  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
+  if [ "$?" -eq "0" ]; then \
+    # @4 - Clean repository - nothing to commit
+    echo " '$UserName\@$PCName\ $Green'"$(__git_ps1 "(%s)"); \
+  else \
+    # @5 - Changes to working tree
+    echo " '$UserName\@$PCName\ $IRed'"$(__git_ps1 "{%s}"); \
+  fi) '$BYellow$PathShort$Color_Off'\$ "; \
+else \
+  # @2 - Prompt when not in GIT repo
+  echo " '$UserName\@$PCName\ $Yellow$PathShort$Color_Off'\$ "; \
+fi)'
+
+# set the correct umask
+umask 002
