@@ -3,7 +3,7 @@ _PHYSZSH=$(readlink -f ~/.zshrc)
 PHYSPATH=$(dirname $_PHYSZSH)
 
 # path to your oh-my-zsh configuration.
-ZSH=$PHYSPATH/../../oh-my-zsh
+ZSH=$PHYSPATH/../../../oh-my-zsh
 
 # set name of the theme to load.
 ZSH_THEME="af-magic"
