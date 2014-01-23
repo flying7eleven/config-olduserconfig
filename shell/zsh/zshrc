@@ -1,0 +1,19 @@
+# get the physical path to the file
+_PHYSZSH=$(readlink -f ~/.zshrc)
+PHYSPATH=$(dirname $_PHYSZSH)
+
+# path to your oh-my-zsh configuration.
+ZSH=$PHYSPATH/../../oh-my-zsh
+
+# set name of the theme to load.
+ZSH_THEME="af-magic"
+
+# which plugins would you like to load?
+plugins=(git)
+
+#
+source $ZSH/oh-my-zsh.sh
+
+# source some other required scripts
+source $PHYSPATH/../shell_aliases
+source $PHYSPATH/../shell_settings
