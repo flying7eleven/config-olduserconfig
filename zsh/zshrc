@@ -74,3 +74,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# fix a bug with java apps and awesome
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# set the default editor which should be used
+export EDITOR="vim"
+
+# set the correct umask
+umask 002
