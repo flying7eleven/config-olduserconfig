@@ -12,14 +12,3 @@ alias tlp="clear && task +private long && task calendar"
 alias tbw="clear && task +work burndown.daily"
 alias tbp="clear && task +private burndown.daily"
 alias gap="clear && git add -p"
-
-# if we're running on MacOS, change some unsupported aliases
-if [ "$(uname -s)" == "Darwin" ]; then
-	alias ll="clear && ls -lG"
-	alias la="clear && ls -laG"
-	unalias dev
-	unalias nb
-	unalias open
-	unalias tigger
-	unalias pac
-fi
