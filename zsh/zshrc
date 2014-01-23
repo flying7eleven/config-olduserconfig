@@ -1,5 +1,12 @@
+# Get the physical path to the file
+PHYSZSH=$(readlink -f ~/.zshrc)
+PHYSPATH=$(dirname $PHYSZSH)
+
+# source some other required scripts
+source ~/.zsh_aliases
+
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.config/awesome/userdir/oh-my-zsh
+ZSH=$PHYSPATH/../../oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
