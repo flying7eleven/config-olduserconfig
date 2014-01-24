@@ -1,0 +1,25 @@
+# ~/.tmuxinator/default.yml
+
+name: work
+root: ~/
+windows:
+  - paper_msa:
+      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      panes:
+        - htop
+        - cd /localdata/paper_project/msa
+  - paper_temporal:
+      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      panes:
+        - htop
+        - cd /localdata/paper_project/temporallappen
+  - dev:
+      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      panes:
+        - htop
+        - cd /localdata/projects
+  - stuff:
+      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      panes:
+        - htop
+        -
