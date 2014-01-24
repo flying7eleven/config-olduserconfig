@@ -15,5 +15,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # source some other required scripts
-source $PHYSPATH/../shell_aliases
 source $PHYSPATH/../shell_settings

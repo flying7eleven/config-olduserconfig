@@ -15,3 +15,19 @@ elif [[ "$(hostname)" == "imedv18" ]]; then
 	echo "Loaded shell scripts for the computer at work"
 	source $PHYSPATH/../shell_paths.imedv18
 fi
+
+# define a list of aliases we want to use in our shell
+alias ll="clear && ls -lh --color=auto"
+alias la="clear && ls -lha --color=auto"
+alias pac="yaourt"
+alias gits="clear && git status"
+alias tigger="tig --all"
+alias open="xdg-open"
+alias grep="grep -i --color=auto"
+alias nb="ipython2 notebook --pylab=inline"
+alias dev="terminator -l programming"
+alias tlw="clear && task +work long && task calendar"
+alias tlp="clear && task +private long && task calendar"
+alias tbw="clear && task +work burndown.daily"
+alias tbp="clear && task +private burndown.daily"
+alias gap="clear && git add -p"
