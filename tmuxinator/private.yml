@@ -1,0 +1,9 @@
+name: private
+root: ~/
+windows:
+  - stuff:
+      layout: 6cc6,236x66,0,0[236x8,0,0,0,236x57,0,9{118x57,0,9,1,117x57,119,9,2}]
+      panes:
+        - htop
+        -
+        -
