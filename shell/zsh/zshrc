@@ -12,6 +12,9 @@ ZSH_THEME="af-magic"
 plugins=(git)
 
 #
+export DISABLE_AUTO_TITLE=true
+
+#
 source $ZSH/oh-my-zsh.sh
 
 # source some other required scripts
