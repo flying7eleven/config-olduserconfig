@@ -1,5 +1,3 @@
-# ~/.tmuxinator/default.yml
-
 name: work
 root: ~/
 windows:
