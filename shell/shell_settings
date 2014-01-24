@@ -10,8 +10,8 @@ umask 002
 #
 if [[ "$(hostname)" == "zockepeter" ]]; then
 	echo "Loaded shell scripts for the computer at home"
-	source $PHYSPATH/shell_paths.zockepeter
+	source $PHYSPATH/../shell_paths.zockepeter
 elif [[ "$(hostname)" == "imedv18" ]]; then
 	echo "Loaded shell scripts for the computer at work"
-	source $PHYSPATH/shell_paths.imedv18
+	source $PHYSPATH/../shell_paths.imedv18
 fi
