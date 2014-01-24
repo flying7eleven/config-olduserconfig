@@ -1,7 +1,6 @@
 [global_config]
   enabled_plugins = ,
   inactive_color_offset = 0.56
-  borderless = True
 [keybindings]
   full_screen = <Ctrl><Shift>F11
 [profiles]
