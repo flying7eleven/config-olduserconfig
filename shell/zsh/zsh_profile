@@ -1,5 +1,2 @@
 # source the users zshrc file
 source ~/.zshrc
-
-# start the SSH agent and setup the required exports
-eval $(ssh-agent)
