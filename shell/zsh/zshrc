@@ -16,3 +16,4 @@ source $ZSH/oh-my-zsh.sh
 
 # source some other required scripts
 source $PHYSPATH/../shell_settings
+source /usr/lib/ruby/gems/2.0.0/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
