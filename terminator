@@ -1,6 +1,8 @@
 [global_config]
   enabled_plugins = ,
-  inactive_color_offset = 0.56
+  window_state = maximise
+  handle_size = 0
+  inactive_color_offset = 1.31
 [keybindings]
   full_screen = <Ctrl><Shift>F11
 [profiles]
@@ -16,39 +18,8 @@
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
     [[[window0]]]
       type = Window
       parent = ""
-  [[programming]]
-    [[[child0]]]
-      position = 0:0
-      type = Window
-      order = 0
-      parent = ""
-      size = 1916, 1196
-    [[[child1]]]
-      position = 958
-      type = HPaned
-      order = 0
-      parent = child0
-    [[[child2]]]
-      position = 598
-      type = VPaned
-      order = 0
-      parent = child1
-    [[[terminal3]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child2
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child1
-    [[[terminal4]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child2
 [plugins]
