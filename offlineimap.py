@@ -1,7 +1,6 @@
 #!/usr/bin/python2
 
 import sys
-import gtk
 import gnomekeyring as gkey
 
 class Keyring(object):
