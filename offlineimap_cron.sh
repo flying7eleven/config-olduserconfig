@@ -8,4 +8,4 @@ done
 export DBUS_SESSION_BUS_ADDRESS=$dbus
 export DISPLAY=$dply
 export USER=$user
-offlineimap
+offlineimap -l /home/$user/.offlineimap.log
