@@ -39,8 +39,8 @@ elif [[ "$(hostname)" == "imedv18" ]]; then
 fi
 
 # define a list of aliases we want to use in our shell
-alias ll="clear && ls -lh --color=auto"
-alias la="clear && ls -lha --color=auto"
+alias ll="clear && ls -lh"
+alias la="clear && ls -lha"
 alias pac="yaourt"
 alias gits="clear && git status"
 alias tigger="tig --all"
