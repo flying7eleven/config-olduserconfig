@@ -1,3 +1,2 @@
-# act like GNU screen
-unbind C-b
-set -g prefix C-b
+# disable the repeat time for tmux
+set -g repeat-time 0
