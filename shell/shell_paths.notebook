@@ -1,3 +1,6 @@
+# override the zsh layout for my notebook (since the default style is not supported well)
+ZSH_THEME="af-magic"
+
 # export the path for MacPorts
 export PATH=/opt/local/bin:$PATH
 export LD_LIBRARY_PATH=/opt/local/lib/:$LD_LIBRARY_PATH
