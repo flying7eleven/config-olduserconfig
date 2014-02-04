@@ -36,6 +36,9 @@ if [[ "$(hostname)" == "zockepeter" ]]; then
 elif [[ "$(hostname)" == "imedv18" ]]; then
 	echo "Loaded shell scripts for the computer at work"
 	source $PHYSPATH/../shell_paths.imedv18
+else
+	echo "Loaded shell scripts for my notebook"
+	source $PHYSPATH/../shell_paths.notebook
 fi
 
 # define a list of aliases we want to use in our shell
