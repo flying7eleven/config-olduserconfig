@@ -7,6 +7,9 @@ set -g mouse-select-window on
 set -g mouse-resize-pane on
 setw -g mode-mouse on
 
+# the first window should start with index 1 instead of 0
+set -g base-index 0
+
 # change the text for the status line of tmux
 set -g status-bg black
 set -g status-fg white
