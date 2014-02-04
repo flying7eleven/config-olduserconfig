@@ -3,26 +3,13 @@ root: ~/
 pre: killall ssh-agent && eval `ssh-agent -s` && ssh-add
 windows:
   - shell:
-      panes:
-        - 
-  - paper_msa:
-      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      layout: 84f4,237x67,0,0[237x8,0,0,0,237x58,0,9,1]
       panes:
         - htop
-        - cd /localdata/paper_project/msa
-  - paper_temporal:
-      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
-      panes:
-        - htop
-        - cd /localdata/paper_project/temporallappen
+        -  
   - dev:
-      layout: e252,236x66,0,0[236x8,0,0,11,236x57,0,9,14]
+      layout: 379f,237x67,0,0[237x8,0,0,0,237x58,0,9{118x58,0,9,1,118x58,119,9,2}]
       panes:
         - htop
         - cd /localdata/projects
-  - stuff:
-      layout: 6cc6,236x66,0,0[236x8,0,0,0,236x57,0,9{118x57,0,9,1,117x57,119,9,2}]
-      panes:
-        - htop
-        -
-        -
+        - cd /localdata/projects
