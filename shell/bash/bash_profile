@@ -1,5 +1,0 @@
-# source the users bashrc file
-source ~/.bashrc
-
-# start the SSH agent and setup the required exports
-eval $(ssh-agent)
