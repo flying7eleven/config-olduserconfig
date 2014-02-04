@@ -3,7 +3,7 @@ _PHYSZSH=$(readlink ~/.zshrc)
 PHYSPATH=$(dirname $_PHYSZSH)
 
 # path to your oh-my-zsh configuration.
-ZSH=$PHYSPATH/../../../oh-my-zsh
+ZSH=$PHYSPATH/../../oh-my-zsh
 
 # set name of the theme to load.
 ZSH_THEME="agnoster"
@@ -29,13 +29,13 @@ umask 002
 #
 if [[ "$(hostname)" == "zockepeter" ]]; then
 	echo "Loaded shell scripts for the computer at home"
-	source $PHYSPATH/../shell_paths.zockepeter
+	source $PHYSPATH/shell_paths.zockepeter
 elif [[ "$(hostname)" == "imedv18" ]]; then
 	echo "Loaded shell scripts for the computer at work"
-	source $PHYSPATH/../shell_paths.imedv18
+	source $PHYSPATH/shell_paths.imedv18
 else
 	echo "Loaded shell scripts for my notebook"
-	source $PHYSPATH/../shell_paths.notebook
+	source $PHYSPATH/shell_paths.notebook
 fi
 
 # define a list of aliases we want to use in our shell
