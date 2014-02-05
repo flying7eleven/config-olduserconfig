@@ -1,6 +1,6 @@
 name: work
 root: ~/
-pre: killall ssh-agent && eval `ssh-agent -s` && ssh-add
+pre: killall ssh-agent; eval `ssh-agent -s`; ssh-add; ssh-add -l
 windows:
   - shell:
       layout: 84f4,237x67,0,0[237x8,0,0,0,237x58,0,9,1]
