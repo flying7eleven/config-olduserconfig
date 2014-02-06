@@ -25,3 +25,8 @@ windows:
         - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de -t htop
         - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de 
         - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de 
+  - judge:
+      layout: 4238,237x67,0,0{118x67,0,0,0,118x67,119,0,1}
+      panes:
+        - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y judge.zam.kfa-juelich.de
+        - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y judge.zam.kfa-juelich.de 
