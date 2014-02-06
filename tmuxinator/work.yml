@@ -13,3 +13,9 @@ windows:
         - htop
         - cd /localdata/projects
         - cd /localdata/projects
+  - exec:
+      layout: 379f,237x67,0,0[237x8,0,0,0,237x58,0,9{118x58,0,9,1,118x58,119,9,2}]
+      panes:
+        - htop
+        - cd /localdata
+        - cd /localdata
