@@ -19,3 +19,9 @@ windows:
         - htop
         - cd /localdata
         - cd /localdata
+  - ime263:
+      layout: 6000,237x67,0,0[237x10,0,0,0,237x56,0,11{118x56,0,11,2,118x56,119,11,4}]
+      panes:
+        - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de -t htop
+        - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de 
+        - ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30 -C -Y ime263.ime.kfa-juelich.de 
