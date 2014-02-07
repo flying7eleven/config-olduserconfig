@@ -4,6 +4,9 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/piminterface/lib/pkgconfig/"
 # added the path to the binaries for dashing and taskwarrior-web
 export PATH="/home/$USER/.gem/ruby/2.0.0/bin:$PATH"
 
+# set the correct search path for ITK
+export ITK_DIR=/opt/itk/lib/cmake/ITK-4.5
+
 # export the required variables for using elastix
 export PATH="/opt/elastix/bin:$PATH"
 export LD_LIBRARY_PATH="/opt/elastix/lib:$LD_LIBRARY_PATH"
