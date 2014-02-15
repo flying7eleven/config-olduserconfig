@@ -8,3 +8,7 @@ export PATH="/home/$USER/.gem/ruby/2.0.0/bin:$PATH"
 export PATH="/localdata/software/android-studio/sdk/platform-tools:$PATH"
 export PATH="/localdata/software/android-studio/sdk/tools:$PATH"
 export PATH="/localdata/software/android-studio/bin:$PATH"
+
+#
+export PATH="/opt/ogre/bin/:$PATH"
+export LD_LIBRARY_PATH="/opt/ogre/lib:$LD_LIBRARY_PATH"
