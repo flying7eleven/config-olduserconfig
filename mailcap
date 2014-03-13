@@ -1,4 +1,8 @@
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 image/*; xv %s 
 application/pdf; evince %s 
-application/zip; file-roller %s 
+application/zip; file-roller %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice %s
+application/vnd.openxmlformats-officedocument.presentationml.slideshow; libreoffice %s
