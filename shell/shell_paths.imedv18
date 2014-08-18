@@ -32,3 +32,5 @@ export LD_LIBRARY_PATH="/opt/java/lib:$LD_LIBRARY_PATH"
 export PATH="/opt/martintools/bin:$PATH"
 export LD_LIBRARY_PATH="/opt/martintools/lib:$LD_LIBRARY_PATH"
 
+# the path to the applyMaskNG tool
+export PATH="/opt/applyMaskNG/bin:$PATH"
