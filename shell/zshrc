@@ -56,4 +56,8 @@ alias tlp="clear && task +private long && task calendar"
 alias tbw="clear && task +work burndown.daily"
 alias tbp="clear && task +private burndown.daily"
 alias gap="clear && git add -p"
-alias python="python2"
+alias fiji="clear && $HOME/Applications/Fiji.app/ImageJ-linux64"
+alias fixconsole="stty icrnl"
+
+# be sure that ^M is correctly converted to a return
+stty icrnl
