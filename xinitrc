@@ -15,7 +15,7 @@ fi
 wmname LG3D
 
 # ensure that our synergy server is running
-synergys
+# synergys
 
 # start the dropbox deamon
 dropboxd &
