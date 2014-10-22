@@ -33,7 +33,7 @@ nm-applet &
 volumeicon &
 
 # enable the taskwarrior webserver
-task-web --port 5678 --host 127.0.0.1 --no-launch
+# task-web --port 5678 --host 127.0.0.1 --no-launch
 
 # start the window manager
 #exec gnome-session
