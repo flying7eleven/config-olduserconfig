@@ -18,7 +18,7 @@ export DISABLE_AUTO_TITLE=true
 #source /usr/lib/ruby/gems/2.1.0/gems/tmuxinator-0.6.6/completion/tmuxinator.zsh
 
 # fix a bug with java apps and awesome
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set the default editor which should be used
 export EDITOR="vim"
