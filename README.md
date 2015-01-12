@@ -97,13 +97,11 @@ Usage (on ArchLinux)
    yaourt -S ttf-google-fonts-git powerline-fonts-git tmuxinator --noconfirm
    ```
 
-4. Clone the repository to the right directory and update the submodules
+4. Clone the repository to the right directory
    ```
    cd ~/.config
-   git clone https://github.com/thuetz/awesome-config awesome
-   cd awesome
-   git submodule init
-   git submodule update
+   git clone git@github.com:robbyrussell/oh-my-zsh.git
+   git clone git@github.com:thuetz/my-user-configurations.git
    ```
 
 5. Install the provided user scripts (for zsh):
