@@ -142,6 +142,7 @@ Usage (on ArchLinux)
    git config --global include.path $HOME/.config/my-user-configurations/gitconfig
    git config --global user.name "Your Name"
    git config --global user.email your@address.com
+   git config --global user.signingkey AABBCCDD
    ```
 
 9. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
