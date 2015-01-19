@@ -61,17 +61,18 @@ Install Arch Linux (General)
 
     If you are using an iMac you may add "reboot=pci" to your "GRZB_CMDLINE_LINUX".
 
-17.1. Create a EFI module without installing grub onto the harddrive (e.g. for use with MacBooks)
-    ```
-    grub-mkstandalone -o /boot/EFI/boot.efi -d /usr/lib/grub/x86_64-efi -O x86_64-efi /boot/grub/grub.cfg
-    grub-mkconfig -o /boot/grub/grub.cfg
-    ```
+17. Boot loader configuration
+  1. Create a EFI module without installing grub onto the harddrive (e.g. for use with MacBooks)
+     ```
+     grub-mkstandalone -o /boot/EFI/boot.efi -d /usr/lib/grub/x86_64-efi -O x86_64-efi /boot/grub/grub.cfg
+     grub-mkconfig -o /boot/grub/grub.cfg
+     ```
 
-17.2. Install the boot manager
-    ```
-    grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --recheck --debug
-    grub-mkconfig -o /boot/grub/grub.cfg
-    ```
+  2. Install the boot manager
+     ```
+     grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --recheck --debug
+     grub-mkconfig -o /boot/grub/grub.cfg
+     ```
 
 18. Exit the newly installed system, unmount the hard drive and reboot into your new system:
     ```
