@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir -p $HOME/.config/systemd/user
 mkdir -p $HOME/.config/terminator
+mkdir -p $HOME/.cache/awesome
 
 # create the symbolic links to the provided configuration files
 ln -s $HOME/.config/my-user-configurations/shell/zshrc $HOME/.zshrc
