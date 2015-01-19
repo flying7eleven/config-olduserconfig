@@ -1,8 +1,8 @@
 Userscript & AwesomeWM Configuration
 ====================================
 
-Install Arch Linux
-------------------
+Install Arch Linux (General)
+----------------------------
 1. Boot from a CD or other install medium
 2. partition your disk. If you are using an EFI system, be sure that your first partition is a FAT32 partion with about 200MB space
 3. Format the partions
