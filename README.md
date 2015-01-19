@@ -19,7 +19,7 @@ Install Arch Linux (General)
 
 7. Go into the new system
    ```
-   arch-chroot /mnt
+   arch-chroot /mnt /bin/bash
    ```
 
 8. Install some important packages
