@@ -58,8 +58,7 @@ Install Arch Linux (General)
     ```
     vim /etc/default/grub
     ```
-
-    If you are using an iMac you may add "reboot=pci" to your "GRZB_CMDLINE_LINUX".
+    There you should remove the ```quite``` parameter for the default command list (```GRUB_CMDLINE_LINUX_DEFAULT```)
 
 17. Boot loader configuration
   1. Create a EFI module without installing grub onto the harddrive (e.g. for use with MacBooks)
