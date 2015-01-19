@@ -24,7 +24,7 @@ Install Arch Linux (General)
 
 8. Install some important packages
    ```
-   pacman -S vim grub dosfstools efibootmgr
+   pacman -S vim ctags grub dosfstools efibootmgr sudo
    ```
 
 9. Set the correct hostname
