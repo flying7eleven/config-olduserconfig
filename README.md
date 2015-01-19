@@ -14,7 +14,7 @@ Install Arch Linux (General)
 
 6. Write the mountpoints into the new system
    ```
-   genfstab -p /mnt >> /mnt/etc/fstab
+   genfstab -U -p /mnt >> /mnt/etc/fstab
    ```
 
 7. Go into the new system
