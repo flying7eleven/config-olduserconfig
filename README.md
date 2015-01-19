@@ -74,7 +74,56 @@ Install Arch Linux (General)
      grub-mkconfig -o /boot/grub/grub.cfg
      ```
 
-18. Exit the newly installed system, unmount the hard drive and reboot into your new system:
+18. Configure the package manager for installing yaourt by adding the following lines into the ```/etc/pacman.conf``` file:
+    ```
+    [archlinuxfr]
+    SigLevel = Never
+    Server = http://repo.archlinux.fr/$arch
+    ```
+
+19. Install yaourt:
+    ```
+    pacman -Sy
+    pacman -S yaourt
+    ```
+
+20. Add a new user and give him or her sudo privileges:
+    ```
+    useradd USERNAME
+    passwd USERNAME
+    cd /home
+    mkdir USERNAME
+    chown USERNAME:USERNAME -R USERNAME
+    chmod o-rwx -R USERNAME
+    EDITOR=vim sudoedit /etc/sudoers
+    ```
+
+21. Swich to the newly created user:
+    ```
+    su USERNAME
+    ```
+
+Install and configure on a MacBook Pro (Early 2012, MacBookPro9,1)
+------------------------------------------------------------------
+
+22. Prepare the system to support WiFi
+    ```
+    yaourt -S b43-fwcutter b43-firmware dialog wpa_supplicant --noconfirm
+    ```
+
+23. Exit the newly installed system, unmount the hard drive and reboot into your new system:
+    ```
+    exit
+    cd /
+    umount -R /mnt
+    sync
+    reboot
+    ```
+
+Install and configure on a normal PC
+------------------------------------
+
+22. Exit the newly installed system, unmount the hard drive and reboot into your new system:
     ```
     exit
     cd /
