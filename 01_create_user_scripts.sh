@@ -16,3 +16,11 @@ ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.c
 
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh
+
+# set some default mime handlers
+xdg-mime default google-chrome.desktop x-scheme-handler/http
+xdg-mime default google-chrome.desktop x-scheme-handler/https
+xdg-mime default pcmanfm.desktop inode/directory
+xdg-mime default pcmanfm.desktop inode/directory
+#xdg-mime default thunderbird.desktop x-scheme-handler/mailto
+#xdg-mime default thunderbird.desktop message/rfc822 
