@@ -9,7 +9,7 @@ Install Arch Linux
 4. Mount the partions as you want them on your system to /mnt
 5. Start the installation of the base system
    ```
-   pacstrap /mnt base
+   pacstrap /mnt base base-devel
    ```
 
 6. Write the mountpoints into the new system
