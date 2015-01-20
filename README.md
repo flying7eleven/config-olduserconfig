@@ -97,7 +97,12 @@ Install Arch Linux (General)
     EDITOR=vim sudoedit /etc/sudoers
     ```
 
-21. Swich to the newly created user:
+21. Enable some required system services
+    ```
+    systemctl enable acpid
+    ```
+
+22. Swich to the newly created user:
     ```
     su USERNAME
     ```
@@ -134,65 +139,43 @@ Install and configure on a normal PC
 
 Usage (on ArchLinux)
 --------------------
-1. Add the following line to your ```/etc/pacman.conf``` file:
+1. Clone the repository to the right directory
    ```
-   [archlinuxfr]
-   SigLevel = Never
-   Server = http://repo.archlinux.fr/$arch
+   mkdir ~/.config
+   cd ~/.config
+   git clone https://github.com/robbyrussell/oh-my-zsh.git
+   git clone https://github.com/thuetz/my-user-configurations.git
+   git clone https://github.com/thuetz/awesomeWM.git awesome
    ```
 
-2. Install awesomewm and some other required applications
+2. Execute the install script
+   ```
+   cd $HOME/.config/my-user-configurations
+   ./00_setup_user_configs.sh
+   ```
+
+3. Log-out and Log-in again to change the shell
+
+4. Install awesomewm and some other required applications
    ```
    sudo pacman -Sy
-   sudo pacman -S xf86-video-nouveau xorg-server xorg-xinit awesome pcmanfm yaourt numlockx networkmanager network-manager-applet tmux aspell aspell-de aspell-en base-devel reflector
+   sudo pacman -S xorg-server xorg-xinit xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter
+   sudo systemctl enable lightdm
    ```
 
-3. Install some required fonts and some other required tools from AUR:
+5. Reboot the system
+
+6. Install some remaining packages which are mostly required
+   ```
+   sudo pacman -S pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop
+   ```
+
+6. Install some required fonts and some other required tools from AUR:
    ```
    yaourt -S ttf-google-fonts-git powerline-fonts-git tmuxinator --noconfirm
    ```
 
-4. Clone the repository to the right directory
-   ```
-   cd ~/.config
-   git clone git@github.com:robbyrussell/oh-my-zsh.git
-   git clone git@github.com:thuetz/my-user-configurations.git
-   ```
-
-5. Install the provided user scripts (for zsh):
-   ```
-   mkdir -p $HOME/.config/systemd/user
-   mkdir -p $HOME/.config/terminator
-   ln -s $HOME/.config/my-user-configurations/shell/zshrc $HOME/.zshrc
-   ln -s $HOME/.config/my-user-configurations/shell/zsh_profile $HOME/.zsh_profile
-   ln -s $HOME/.config/my-user-configurations/terminator $HOME/.config/terminator/config
-   ln -s $HOME/.config/my-user-configurations/vimrc $HOME/.vimrc
-   ln -s $HOME/.config/my-user-configurations/xinitrc $HOME/.xinitrc
-   ln -s $HOME/.config/my-user-configurations/taskrc $HOME/.taskrc
-   ln -s $HOME/.config/my-user-configurations/tmuxinator $HOME/.tmuxinator
-   ln -s $HOME/.config/my-user-configurations/tmux $HOME/.tmux.conf
-   ln -s $HOME/.config/my-user-configurations/mailcap $HOME/.mailcap
-   ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.config
-   ```
-
-6. Change the default shell to zsh
-   ```
-   chsh -s /bin/zsh
-   ```
-   Restart the terminal aftering issuing the command above!
-
-7. Configure the default applications
-   Set some of the default applications of your computer
-   ```
-   xdg-mime default google-chrome.desktop x-scheme-handler/http
-   xdg-mime default google-chrome.desktop x-scheme-handler/https
-   xdg-mime default pcmanfm.desktop inode/directory
-   xdg-mime default pcmanfm.desktop inode/directory
-   xdg-mime default thunderbird.desktop x-scheme-handler/mailto
-   xdg-mime default thunderbird.desktop message/rfc822 
-   ```
-
-8. Ensure that the correct git configuration is used
+7. Ensure that the correct git configuration is used
    ```
    git config --global include.path $HOME/.config/my-user-configurations/gitconfig
    git config --global user.name "Your Name"
@@ -200,7 +183,7 @@ Usage (on ArchLinux)
    git config --global user.signingkey AABBCCDD
    ```
 
-9. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
+8. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
    ```
    sudo sh -c "echo 'dhcp=dhcpcd' >> /etc/NetworkManager/NetworkManager.conf"
    ```
@@ -215,7 +198,7 @@ Usage (on ArchLinux)
    sudo sh -c "echo '}' >> /etc/dhclient.conf"
    ```
 
-10. Disable the manually started DHCP client and enable and start the network-manager:
+9. Disable the manually started DHCP client and enable and start the network-manager:
    ```
    sudo systemctl stop dhcpcd
    sudo systemctl disable dhcpcd
@@ -223,4 +206,4 @@ Usage (on ArchLinux)
    sudo systemctl start NetworkManager
    ```
 
-11. Start awesomewm
+10. Start awesomewm
