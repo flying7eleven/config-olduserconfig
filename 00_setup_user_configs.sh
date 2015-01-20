@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir -p $HOME/.config/systemd/user
 mkdir -p $HOME/.config/terminator
+mkdir -p $HOME/.local/share/applications
 mkdir -p $HOME/.cache/awesome
 
 # create the symbolic links to the provided configuration files
