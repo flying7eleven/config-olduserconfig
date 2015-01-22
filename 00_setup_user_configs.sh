@@ -20,6 +20,10 @@ ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.c
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh
 
+# create a symbolic link for pommed
+echo "Creating symbolic link for pommed.conf..."
+sudo sh -c "ln -s $HOME/.config/my-user-configurations/pommed.conf /etc/pommed.conf"
+
 # set some default mime handlers
 xdg-mime default google-chrome.desktop x-scheme-handler/http
 xdg-mime default google-chrome.desktop x-scheme-handler/https
