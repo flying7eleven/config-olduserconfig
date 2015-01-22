@@ -107,39 +107,12 @@ Install Arch Linux (General)
     su USERNAME
     ```
 
-Install and configure on a MacBook Pro (Early 2012, MacBookPro9,1)
-------------------------------------------------------------------
-
 22. Prepare the system to support WiFi
     ```
     yaourt -S b43-fwcutter b43-firmware dialog wpa_supplicant --noconfirm
     ```
 
-23. Exit the newly installed system, unmount the hard drive and reboot into your new system:
-    ```
-    exit
-    cd /
-    umount -R /mnt
-    sync
-    reboot
-    ```
-
-Install and configure on a normal PC
-------------------------------------
-
-22. Exit the newly installed system, unmount the hard drive and reboot into your new system:
-    ```
-    exit
-    cd /
-    umount -R /mnt
-    sync
-    reboot
-    ```
-
-
-Usage (on ArchLinux)
---------------------
-1. Clone the repository to the right directory
+23. Clone the repository to the right directory
    ```
    mkdir ~/.config
    cd ~/.config
@@ -148,34 +121,54 @@ Usage (on ArchLinux)
    git clone https://github.com/thuetz/awesomeWM.git awesome
    ```
 
-2. Execute the install script
+24. Execute the install script
    ```
    cd $HOME/.config/my-user-configurations
    ./00_setup_user_configs.sh
    ```
 
-3. Log-out and Log-in again to change the shell
+25. Log-out and Log-in again to change the shell
 
-4. Install awesomewm and some other required applications
+26. Install awesomewm and some other required applications
    ```
-   sudo pacman -Sy
-   sudo pacman -S xorg-server xorg-xinit xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter
+   sudo pacman -S xorg-server xorg-server-devel xorg-xinit xorg-utils xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop openntpd htop ttf-dejavu
+   ```
+
+27. Install some required fonts and some other required tools from AUR:
+   ```
+   yaourt -S ttf-google-fonts-git powerline-fonts-git tmuxinator google-chrome lightdm-gtk-greeter-settings pommed-light --noconfirm
+   ```
+
+28. Start some required services
+   ```
    sudo systemctl enable lightdm
+   sudo systemctl enable openntpd
+   sudo systemctl enable pommed
    ```
 
-5. Reboot the system
+28. Exit the newly installed system, unmount the hard drive and reboot into your new system:
+    ```
+    exit
+    exit
+    cd /
+    umount -R /mnt
+    sync
+    reboot
+    ```
 
-6. Install some remaining packages which are mostly required
+Usage (on ArchLinux)
+--------------------
+1. Setup the graphic card
    ```
-   sudo pacman -S pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop
+   sudo nvidia-settings
+   ```
+   Save the configuration file as ```/etc/X11/xorg.conf```. After doing that, change the DPI value to the corresponding value. Therefore, you have to edit the "Device" section and add the following options:
+   ```
+   Option "UseEdidDpi" "false"
+   Option "DPI" "96 x 96"
    ```
 
-6. Install some required fonts and some other required tools from AUR:
-   ```
-   yaourt -S ttf-google-fonts-git powerline-fonts-git tmuxinator --noconfirm
-   ```
-
-7. Ensure that the correct git configuration is used
+2. Ensure that the correct git configuration is used
    ```
    git config --global include.path $HOME/.config/my-user-configurations/gitconfig
    git config --global user.name "Your Name"
@@ -183,7 +176,7 @@ Usage (on ArchLinux)
    git config --global user.signingkey AABBCCDD
    ```
 
-8. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
+3. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
    ```
    sudo sh -c "echo 'dhcp=dhcpcd' >> /etc/NetworkManager/NetworkManager.conf"
    ```
@@ -198,7 +191,7 @@ Usage (on ArchLinux)
    sudo sh -c "echo '}' >> /etc/dhclient.conf"
    ```
 
-9. Disable the manually started DHCP client and enable and start the network-manager:
+4. Disable the manually started DHCP client and enable and start the network-manager:
    ```
    sudo systemctl stop dhcpcd
    sudo systemctl disable dhcpcd
@@ -206,4 +199,4 @@ Usage (on ArchLinux)
    sudo systemctl start NetworkManager
    ```
 
-10. Start awesomewm
+5. Start awesomewm
