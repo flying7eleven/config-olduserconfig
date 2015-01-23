@@ -102,13 +102,12 @@ RAM:${alignr}${memperc}%  ${membar 8,60}
 ENT:$alignr${entropy_perc}%  ${entropy_bar 8,60}
 Uptime:${alignr}${uptime}
 Date:${alignr}${time %a %d %b %Y}
-
-POWER ${hr 2}
+${if_match "$test" >="113"}POWER ${hr 2}
 Battery state:${alignr}${execi 10 acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\2/'}
 Battery health:${alignr}N/A %
 Time Left:${alignr}$battery_time
 
-${execibar 10 acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\3/'}  ${execi 10 acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\3/'} %
+${execibar 10 acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\3/'}  ${execi 10 acpi -b | awk "{print $1}" | sed 's/\([^:]*\): \([^,]*\), \([0-9]*\)%.*/\3/'} %${endif}
 
 HD ${hr 2}
 /: ${fs_free /}/${fs_size /}
