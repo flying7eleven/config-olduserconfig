@@ -112,13 +112,13 @@ ${if_existing /proc/net/route eno1}NETWORK (Ethernet) ${hr 2}
 Up: ${upspeed eno1} /s ${alignr}${upspeedgraph eno1 8,60 789E2D A7CC5C}
 Down: ${downspeed eno1} /s ${alignr}${downspeedgraph eno1 8,60 789E2D A7CC5C}
 Upload: ${alignr}${totalup eno1}
-Download: ${alignr}${totaldown eno1}${endif}${if_existing /proc/net/route wlan0}NETWORK (WiFi) ${hr 2}
-IP Address: ${alignr} ${addr wlan0}
-Up: ${upspeed wlan0}/s ${alignr}${upspeedgraph wlan0 8,60 789E2D A7CC5C}
-Down: ${downspeed wlan0}/s ${alignr}${downspeedgraph wlan0 8,60 789E2D A7CC5C}
-Upload: ${alignr}${totalup wlan0}
-Download: ${alignr}${totaldown wlan0}
-Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}${endif}
+Download: ${alignr}${totaldown eno1}${endif}${if_existing /proc/net/route wlp3s0b1}NETWORK (WiFi) ${hr 2}
+IP Address: ${alignr} ${addr wlp3s0b1}
+Up: ${upspeed wlp3s0b1}/s ${alignr}${upspeedgraph wlp3s0b1 8,60 789E2D A7CC5C}
+Down: ${downspeed wlp3s0b1}/s ${alignr}${downspeedgraph wlp3s0b1 8,60 789E2D A7CC5C}
+Upload: ${alignr}${totalup wlp3s0b1}
+Download: ${alignr}${totaldown wlp3s0b1}
+Signal: ${wireless_link_qual wlp3s0b1}% ${alignr}${wireless_link_bar 8,60 wlp3s0b1}${endif}
  
 PROCESSES ${hr 2}
 NAME $alignr PID    CPU
