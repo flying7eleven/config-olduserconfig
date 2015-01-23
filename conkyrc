@@ -63,7 +63,7 @@ default_color white
 own_window_colour white
  
 # Text alignment, other possible values are commented
-alignment top_right
+alignment top_left
  
 # Gap between borders of screen and text
 # same thing as passing -x at command line
@@ -100,6 +100,11 @@ RAM:${alignr}${memperc}%  ${membar 8,60}
 ENT:$alignr${entropy_perc}%  ${entropy_bar 8,60}
 Uptime:${alignr}${uptime}
 Date:${alignr}${time %a %d %b %Y}
+
+POWER ${hr 2}
+$apcupsd_status
+Time Left:${alignr}$battery_time
+${battery_bar 8,180}  $apcupsd_charge %
 
 HD ${hr 2}
 /: ${fs_free /}/${fs_size /}
@@ -141,7 +146,15 @@ ${top_mem name 5}${alignr}${top_mem pid 5} ${top_mem mem 5}
 ${top_mem name 6}${alignr}${top_mem pid 6} ${top_mem mem 6}
 ${top_mem name 7}${alignr}${top_mem pid 7} ${top_mem mem 7}
 ${top_mem name 8}${alignr}${top_mem pid 8} ${top_mem mem 8}
- 
+
+TEMPERATURE ${hr 2}
+CPU:${alignr}${execi 10 sensors | grep -A 2 '^coretemp-isa-0000' | grep 'Physical' | cut -c15-24}
+SDD:${alignr}${execi 10 smartctl -A /dev/sda | grep 'Temperature' | cut -c88-89}°C
+HDD:${alignr}${execi 10 smartctl -A /dev/sdb | grep 'Temperature' | cut -c88-89}°C
+Left fan:${alignr}${execi 10 sensors | grep -A 4 '^applesmc-isa-0300' | grep 'Left' | cut -c14-21}
+Right fan:${alignr}${execi 10 sensors | grep -A 4 '^applesmc-isa-0300' | grep 'Right' | cut -c14-21}
+
 KEYBINDINGS ${hr 2}
 Super+R${alignr}Run dialog
-Super+L${alignr}Logout
+Super+L${alignr}Lock screen
+Super+Return${alignr}Open terminal
