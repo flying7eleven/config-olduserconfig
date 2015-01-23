@@ -108,21 +108,17 @@ ${fs_bar 8,160 /}  ${fs_used_perc /}%
 /var: ${fs_free /var}/${fs_size /var}
 ${fs_bar 8,160 /var}  ${fs_used_perc /var}%
 
-NETWORK ${hr 2}
-${if_existing /proc/net/route wlan0}
+${if_existing /proc/net/route eno1}NETWORK (Ethernet) ${hr 2}
+Up: ${upspeed eno1} /s ${alignr}${upspeedgraph eno1 8,60 789E2D A7CC5C}
+Down: ${downspeed eno1} /s ${alignr}${downspeedgraph eno1 8,60 789E2D A7CC5C}
+Upload: ${alignr}${totalup eno1}
+Download: ${alignr}${totaldown eno1}${endif}${if_existing /proc/net/route wlan0}NETWORK (WiFi) ${hr 2}
 IP Address: ${alignr} ${addr wlan0}
 Up: ${upspeed wlan0}/s ${alignr}${upspeedgraph wlan0 8,60 789E2D A7CC5C}
 Down: ${downspeed wlan0}/s ${alignr}${downspeedgraph wlan0 8,60 789E2D A7CC5C}
 Upload: ${alignr}${totalup wlan0}
 Download: ${alignr}${totaldown wlan0}
-Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}
-${endif}
-${if_existing /proc/net/route eth0}
-Up: ${upspeed eth0} /s ${alignr}${upspeedgraph eth0 8,60 789E2D A7CC5C}
-Down: ${downspeed eth0} /s ${alignr}${downspeedgraph eth0 8,60 789E2D A7CC5C}
-Upload: ${alignr}${totalup eth0}
-Download: ${alignr}${totaldown eth0}
-${endif}
+Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}${endif}
  
 PROCESSES ${hr 2}
 NAME $alignr PID    CPU
