@@ -93,26 +93,38 @@ use_spacer none
 
 TEXT
 SYSTEM ${hr 2}
-
 Host:$alignr$nodename 
-Kernel:  ${alignr}${kernel}
-CPU: ${cpu cpu}% ${alignr}${cpubar 8,60 cpu}
-RAM: $memperc% ${alignr}${membar 8,60}
-ENT: ${entropy_perc}% $alignr${entropy_bar 8,60}
-Uptime: ${alignr}${uptime}
-Date: ${alignr}${time %a %d %b}
+Kernel:${alignr}${kernel}
+CPU:${alignr}${cpu cpu}%  ${cpubar 8,60 cpu}
+RAM:${alignr}${memperc}%  ${membar 8,60}
+ENT:$alignr${entropy_perc}%  ${entropy_bar 8,60}
+Uptime:${alignr}${uptime}
+Date:${alignr}${time %a %d %b %Y}
 
 HD ${hr 2}
+/: ${fs_free /}/${fs_size /}
+${fs_bar 8,160 /}  ${fs_used_perc /}%
 
-I/O: ${alignr} R:${diskio_read} // W:${diskio_write}
-${diskiograph}
-Home:
-${fs_free /home}/${fs_size /home} ${alignr}${fs_bar 8,60 /home}
-Root:
-${fs_free /root}/${fs_size /root} ${alignr}${fs_bar 8,60 /root}
+/var: ${fs_free /var}/${fs_size /var}
+${fs_bar 8,160 /var}  ${fs_used_perc /var}%
+
+NETWORK ${hr 2}
+${if_existing /proc/net/route wlan0}
+IP Address: ${alignr} ${addr wlan0}
+Up: ${upspeed wlan0}/s ${alignr}${upspeedgraph wlan0 8,60 789E2D A7CC5C}
+Down: ${downspeed wlan0}/s ${alignr}${downspeedgraph wlan0 8,60 789E2D A7CC5C}
+Upload: ${alignr}${totalup wlan0}
+Download: ${alignr}${totaldown wlan0}
+Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}
+${endif}
+${if_existing /proc/net/route eth0}
+Up: ${upspeed eth0} /s ${alignr}${upspeedgraph eth0 8,60 789E2D A7CC5C}
+Down: ${downspeed eth0} /s ${alignr}${downspeedgraph eth0 8,60 789E2D A7CC5C}
+Upload: ${alignr}${totalup eth0}
+Download: ${alignr}${totaldown eth0}
+${endif}
  
 PROCESSES ${hr 2}
- 
 NAME $alignr PID    CPU
 ${top name 1} $alignr ${top pid 1} ${top cpu 1}
 ${top name 2} $alignr ${top pid 2} ${top cpu 2}
@@ -122,36 +134,18 @@ ${top name 5} $alignr ${top pid 5} ${top cpu 5}
 ${top name 6} $alignr ${top pid 6} ${top cpu 6}
 ${top name 7} $alignr ${top pid 7} ${top cpu 7}
 ${top name 8} $alignr ${top pid 8} ${top cpu 8}
- 
-NETWORK ${hr 2}
-${if_existing /proc/net/route wlan0}
-IP Address: ${alignr} ${addr wlan0}
-Up: ${upspeed wlan0}/s ${alignr}${upspeedgraph wlan0 8,60 789E2D A7CC5C}
-Down: ${downspeed wlan0}/s ${alignr}${downspeedgraph wlan0 8,60 789E2D A7CC5C}
-Upload: ${alignr}${totalup wlan0}
-Download: ${alignr}${totaldown wlan0}
-Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}${else}${if_existing /proc/net/route eth0}
-Up: ${upspeed eth0} /s ${alignr}${upspeedgraph eth0 8,60 789E2D A7CC5C}
-Down: ${downspeed eth0} /s ${alignr}${downspeedgraph eth0 8,60 789E2D A7CC5C}
-Upload: ${alignr}${totalup eth0}
-Download: ${alignr}${totaldown eth0}${endif}${else}${if_existing /proc/net/route eth1}
-Up: ${upspeed eth1} ${alignr}${upspeedgraph eth1 8,60 789E2D A7CC5C}
-Down: ${downspeed eth1} ${alignr}${downspeedgraph eth1 8,60 789E2D A7CC5C}
-Upload: ${alignr}${totalup eth1}
-Download: ${alignr}${totaldown eth1}${endif}${else}${font PizzaDude Bullets:size=14}4${font}   Network Unavailable${endif}
+
+MEMORY ${hr 2}
+NAME${alignr}PID    MEM
+${top_mem name 1}${alignr}${top_mem pid 1} ${top_mem mem 1}
+${top_mem name 2}${alignr}${top_mem pid 2} ${top_mem mem 2}
+${top_mem name 3}${alignr}${top_mem pid 3} ${top_mem mem 3}
+${top_mem name 4}${alignr}${top_mem pid 4} ${top_mem mem 4}
+${top_mem name 5}${alignr}${top_mem pid 5} ${top_mem mem 5}
+${top_mem name 6}${alignr}${top_mem pid 6} ${top_mem mem 6}
+${top_mem name 7}${alignr}${top_mem pid 7} ${top_mem mem 7}
+${top_mem name 8}${alignr}${top_mem pid 8} ${top_mem mem 8}
  
 KEYBINDINGS ${hr 2}
-   
-Alt+F2$alignr Run Dialog
-Alt+F3$alignr Alt Menu
-Super+space$alignr Main Menu
-Super+t$alignr Terminal
-Super+f$alignr File Manager
-Super+e$alignr Editor
-Super+m$alignr Media Player
-Super+w$alignr Web Browser
-Super+g$alignr Graphics Editor
-Super+l$alignr Lock Screen
-Super+v$alignr Volume Control
-Super+x$alignr Logout
-PrtSc$alignr Screenshot
+Super+R${alignr}Run dialog
+Super+L${alignr}Logout
