@@ -136,7 +136,7 @@ Install Arch Linux (General)
 
 27. Install some required fonts and some other required tools from AUR:
    ```
-   yaourt -S ttf-google-fonts-git powerline-fonts-git ttf-ms-fonts tmuxinator google-chrome lightdm-gtk-greeter-settings pommed-light --noconfirm
+   yaourt -S ttf-google-fonts-git powerline-fonts-git ttf-ms-fonts tmuxinator google-chrome lightdm-gtk-greeter-settings pommed-light mbpfan-git --noconfirm
    ```
 
 28. Start some required services
@@ -144,6 +144,7 @@ Install Arch Linux (General)
    sudo systemctl enable lightdm
    sudo systemctl enable openntpd
    sudo systemctl enable pommed
+   sudo systemctl enable mbpfan
    ```
 
 28. Exit the newly installed system, unmount the hard drive and reboot into your new system:
