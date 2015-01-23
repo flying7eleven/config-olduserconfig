@@ -131,7 +131,7 @@ Install Arch Linux (General)
 
 26. Install awesomewm and some other required applications
    ```
-   sudo pacman -S xorg-server xorg-server-devel xorg-xinit xorg-utils xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop openntpd htop ttf-dejavu volumeicon conky
+   sudo pacman -S xorg-server xorg-server-devel xorg-xinit xorg-utils xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop openntpd htop ttf-dejavu volumeicon conky lm_sensors
    ```
 
 27. Install some required fonts and some other required tools from AUR:
