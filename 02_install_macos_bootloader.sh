@@ -1,2 +1,2 @@
 #!/bin/bash
-yaourt -S libpng libjpeg librsvg libicns mactel-boot --noconfirm
+yaourt -S libpng libjpeg librsvg libicns mactel-boot hfsprogs --noconfirm
