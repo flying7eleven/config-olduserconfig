@@ -1,7 +1,7 @@
 Userscript & AwesomeWM Configuration
 ====================================
 
-Install Arch Linux (General)
+Install Arch Linux (Base System)
 ----------------------------
 1. Boot from a CD or other install medium
 2. partition your disk. If you are using an EFI system, be sure that your first partition is a FAT32 partion with about 200MB space
@@ -24,7 +24,7 @@ Install Arch Linux (General)
 
 8. Install some important packages
    ```
-   pacman -S vim ctags grub dosfstools efibootmgr sudo git tig zsh acpid xterm xdg-utils
+   pacman -S vim ctags grub dosfstools efibootmgr sudo git tig zsh
    ```
 
 9. Set the correct hostname
@@ -38,6 +38,7 @@ Install Arch Linux (General)
     ```
 
 11. Uncomment the selected locale in /etc/locale.gen and generate it with locale-gen.
+
 12. Set locale preferences in /etc/locale.conf
     ```
     locale > /etc/locale.conf
@@ -54,6 +55,7 @@ Install Arch Linux (General)
     ```
 
 15. Set a root password with passwd.
+
 16. Configure the default parameters for grub
     ```
     vim /etc/default/grub
@@ -97,12 +99,7 @@ Install Arch Linux (General)
     EDITOR=vim sudoedit /etc/sudoers
     ```
 
-21. Enable some required system services
-    ```
-    systemctl enable acpid
-    ```
-
-22. Swich to the newly created user:
+21. Swich to the newly created user:
     ```
     su USERNAME
     ```
@@ -113,41 +110,23 @@ Install Arch Linux (General)
     ```
 
 23. Clone the repository to the right directory
-   ```
-   mkdir ~/.config
-   cd ~/.config
-   git clone https://github.com/robbyrussell/oh-my-zsh.git
-   git clone https://github.com/thuetz/my-user-configurations.git
-   git clone https://github.com/thuetz/awesomeWM.git awesome
-   ```
+    ```
+    mkdir ~/.config
+    cd ~/.config
+    git clone https://github.com/robbyrussell/oh-my-zsh.git
+    git clone https://github.com/thuetz/my-user-configurations.git
+    git clone https://github.com/thuetz/awesomeWM.git awesome
+    ```
 
-24. Execute the install script
-   ```
-   cd $HOME/.config/my-user-configurations
-   ./00_setup_user_configs.sh
-   ```
+24. Execute the setup script
+    ```
+    cd $HOME/.config/my-user-configurations
+    ./00_setup_user_configs.sh
+    ```
 
 25. Log-out and Log-in again to change the shell
 
-26. Install awesomewm and some other required applications
-   ```
-   sudo pacman -S xorg-server xorg-server-devel xorg-xinit xorg-utils xf86-input-synaptics awesome nvidia lightdm lightdm-gtk3-greeter pcmanfm numlockx networkmanager network-manager-applet terminator tmux aspell aspell-de aspell-en reflector powertop openntpd htop ttf-dejavu volumeicon conky lm_sensors smartmontools acpi
-   ```
-
-27. Install some required fonts and some other required tools from AUR:
-   ```
-   yaourt -S ttf-google-fonts-git powerline-fonts-git ttf-ms-fonts tmuxinator google-chrome lightdm-gtk-greeter-settings pommed-light mbpfan-git --noconfirm
-   ```
-
-28. Start some required services
-   ```
-   sudo systemctl enable lightdm
-   sudo systemctl enable openntpd
-   sudo systemctl enable pommed
-   sudo systemctl enable mbpfan
-   ```
-
-28. Exit the newly installed system, unmount the hard drive and reboot into your new system:
+26. Exit the newly installed system, unmount the hard drive and reboot into your new system:
     ```
     exit
     exit
@@ -157,47 +136,17 @@ Install Arch Linux (General)
     reboot
     ```
 
-Usage (on ArchLinux)
---------------------
-1. Setup the graphic card
-   ```
-   sudo nvidia-settings
-   ```
+
+Further configuration after reboot
+----------------------------------
+
+1. Run ```01_configure_system.sh``` to install some more required packages and so some basic configuration
+
+2. Setup the graphic card
    Save the configuration file as ```/etc/X11/xorg.conf```. After doing that, change the DPI value to the corresponding value. Therefore, you have to edit the "Device" section and add the following options:
    ```
    Option "UseEdidDpi" "false"
    Option "DPI" "96 x 96"
    ```
 
-2. Ensure that the correct git configuration is used
-   ```
-   git config --global include.path $HOME/.config/my-user-configurations/gitconfig
-   git config --global user.name "Your Name"
-   git config --global user.email your@address.com
-   git config --global user.signingkey AABBCCDD
-   ```
-
-3. Configure the network-manager to get the correct DHCP address. The first step is to tell the network-manager which DHCP implementation should be used:
-   ```
-   sudo sh -c "echo 'dhcp=dhcpcd' >> /etc/NetworkManager/NetworkManager.conf"
-   ```
-   After this was done, get your MAC address by entering the following command:
-   ```
-   ip link show
-   ```
-   Then replace the interface name and your MAC address in the following lines and execute them to write the information into your ```/etc/dhclient.conf``` file:
-   ```
-   sudo sh -c "echo 'interface \"eth0\" {' >> /etc/dhclient.conf"
-   sudo sh -c "echo '    send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;' {' >> /etc/dhclient.conf"
-   sudo sh -c "echo '}' >> /etc/dhclient.conf"
-   ```
-
-4. Disable the manually started DHCP client and enable and start the network-manager:
-   ```
-   sudo systemctl stop dhcpcd
-   sudo systemctl disable dhcpcd
-   sudo systemctl enable NetworkManager
-   sudo systemctl start NetworkManager
-   ```
-
-5. Start awesomewm
+3. Reboot your system
