@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# be sure that our scripts are publicy available
+export PATH=$PATH:$HOME/.config/my-user-configurations/scripts
+
 # fix a bug with awesome and java applications
 wmname LG3D
 
