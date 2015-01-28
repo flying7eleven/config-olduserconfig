@@ -49,10 +49,9 @@ Install Arch Linux (Base System)
     echo "KEYMAP=en" > /etc/vconsole.conf
     ```
 
-14. Configure /etc/mkinitcpio.conf as needed and create an initial RAM disk with:
-    ```
-    mkinitcpio -p linux
-    ```
+14. Configure /etc/mkinitcpio.conf as needed and create an initial RAM disk with ```mkinitcpio -p linux```. You *should* add
+    the ```resume``` to the ```HOOKS``` of the configuration file.
+    
 
 15. Set a root password with passwd.
 
@@ -81,6 +80,7 @@ Install Arch Linux (Base System)
     SigLevel = Never
     Server = http://repo.archlinux.fr/$arch
     ```
+    Also you should enable the ```multilib``` repository.
 
 19. Install yaourt:
     ```
