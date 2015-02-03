@@ -61,3 +61,4 @@ alias fixconsole="stty icrnl"
 
 # be sure that ^M is correctly converted to a return
 stty icrnl
+
