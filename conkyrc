@@ -117,11 +117,11 @@ ${fs_bar 8,160 /}  ${fs_used_perc /}%
 /boot: ${fs_free /boot}/${fs_size /boot}
 ${fs_bar 8,160 /boot}  ${fs_used_perc /boot}%
 
+/boot/efi: ${fs_free /boot/efi}/${fs_size /boot/efi}
+${fs_bar 8,160 /boot/efi}  ${fs_used_perc /boot/efi}%
+
 /home: ${fs_free /home}/${fs_size /home}
 ${fs_bar 8,160 /home}  ${fs_used_perc /home}%
-
-/localdata: ${fs_free /localdata}/${fs_size /localdata}
-${fs_bar 8,160 /localdata}  ${fs_used_perc /localdata}%
 
 /var: ${fs_free /var}/${fs_size /var}
 ${fs_bar 8,160 /var}  ${fs_used_perc /var}%
