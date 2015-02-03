@@ -11,5 +11,5 @@ sudo systemctl enable acpid
 sudo systemctl enable NetworkManager
 
 # generate the basic nvidia configuration file for X
-sudo nvidia-xconfig
+sudo Xorg -configure
 
