@@ -18,6 +18,9 @@ dropboxd &
 # start the SparkleShare client
 #sparkleshare start &
 
+# enable the battery icon
+cbatticon &
+
 # enable the numlock while logging in
 numlockx &
 
