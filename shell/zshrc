@@ -24,7 +24,7 @@ export DISABLE_AUTO_TITLE=true
 export EDITOR="vim"
 
 # set the correct umask
-umask 002
+umask 022
 
 #
 if [[ "$(hostname)" == "zockepeter" ]]; then
