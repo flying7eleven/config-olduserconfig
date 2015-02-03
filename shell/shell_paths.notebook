@@ -2,6 +2,7 @@
 export CC=clang
 export CXX=clang++
 
-# export the path for MacPorts
-export PATH=/opt/local/bin:$PATH
-export LD_LIBRARY_PATH=/opt/local/lib/:$LD_LIBRARY_PATH
+# set the paths to Ogre3D
+export OGRE_SDK=/opt/ogre3d
+export PATH=$PATH:/opt/ogre3d/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ogre3d/lib
