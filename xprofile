@@ -3,6 +3,9 @@
 # be sure that our scripts are publicy available
 export PATH=$PATH:$HOME/.config/my-user-configurations/scripts
 
+# be sure thet minecraft can be found
+export PATH=$PATH:/opt/minecraft
+
 # fix a bug with awesome and java applications
 wmname LG3D
 
@@ -14,6 +17,9 @@ dropboxd &
 
 # start the SparkleShare client
 #sparkleshare start &
+
+# enable the battery icon
+cbatticon &
 
 # enable the numlock while logging in
 numlockx &
@@ -29,3 +35,6 @@ conky &
 
 # enable the taskwarrior webserver
 # task-web --port 5678 --host 127.0.0.1 --no-launch
+
+#
+source ~/.config/my-user-configurations/shell/shell_paths.notebook

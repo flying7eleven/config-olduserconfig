@@ -24,7 +24,7 @@ export DISABLE_AUTO_TITLE=true
 export EDITOR="vim"
 
 # set the correct umask
-umask 002
+umask 022
 
 #
 if [[ "$(hostname)" == "zockepeter" ]]; then
@@ -61,3 +61,4 @@ alias fixconsole="stty icrnl"
 
 # be sure that ^M is correctly converted to a return
 stty icrnl
+
