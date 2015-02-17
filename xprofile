@@ -15,6 +15,9 @@ wmname LG3D
 # start the dropbox deamon
 dropboxd &
 
+# start the file manager daemon
+pcmanfm -d &
+
 # start the SparkleShare client
 #sparkleshare start &
 
