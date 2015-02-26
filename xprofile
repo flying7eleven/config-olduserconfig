@@ -37,7 +37,7 @@ nm-applet &
 volumeicon &
 
 # start conky
-conky &
+# conky &
 
 # enable the taskwarrior webserver
 # task-web --port 5678 --host 127.0.0.1 --no-launch
