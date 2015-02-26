@@ -9,6 +9,9 @@ export PATH=$PATH:/opt/minecraft
 # fix a bug with awesome and java applications
 wmname LG3D
 
+# load the new modified key map
+xmodmap ~/.Xmodmap
+
 # ensure that our synergy server is running
 # synergys
 
