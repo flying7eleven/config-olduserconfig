@@ -3,6 +3,7 @@ mkdir -p $HOME/.config/systemd/user
 mkdir -p $HOME/.config/terminator
 mkdir -p $HOME/.local/share/applications
 mkdir -p $HOME/.cache/awesome
+mkdir -p $HOME/.config/mpd/
 
 # create the symbolic links to the provided configuration files
 ln -s $HOME/.config/my-user-configurations/shell/zshrc $HOME/.zshrc
@@ -17,6 +18,7 @@ ln -s $HOME/.config/my-user-configurations/tmux $HOME/.tmux.conf
 ln -s $HOME/.config/my-user-configurations/mailcap $HOME/.mailcap
 ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.config
 ln -s $HOME/.config/my-user-configurations/conkyrc $HOME/.conkyrc
+ln -s $HOME/.config/my-user-configurations/mpd.conf $HOME/.config/mpd/mpd.conf
 
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh
