@@ -16,7 +16,7 @@ xmodmap ~/.Xmodmap
 # synergys
 
 # start the dropbox deamon
-dropboxd &
+dropbox &
 
 # start the file manager daemon
 pcmanfm -d &
