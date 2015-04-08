@@ -1,3 +1,28 @@
+"
+set nocompatible
+
+"
+set rtp+=~/.vim/bundle/Vundle.vim
+
+"
+filetype off
+call vundle#begin()
+
+"
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'ap/vim-css-color'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+"
+call vundle#end()
+filetype plugin indent on
+
 " enable syntax highlighting
 syntax on
 
@@ -23,6 +48,8 @@ set viminfo+=n~/.vim/viminfo
 set showmatch
 
 " map some keys we need on a regular basis
+map <F7> :NERDTreeTabsToggle<CR>
 map <F8> :w<CR>:!uncrustify -c ~/.uncrustify.config -f % -o %<CR>:!rm -f %.unc-backup*<CR>:e<CR>
+map <F9> :TagbarToggle<CR>
 map <F11> :w<CR>:!aspell -c % --mode=email --lang de_DE<CR>:e<CR>
 map <F12> :w<CR>:!aspell -c % --mode=email --lang en_US<CR>:e<CR>
