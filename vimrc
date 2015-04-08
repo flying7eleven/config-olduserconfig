@@ -19,6 +19,9 @@ endif
 " move the .viminfo file into the .vim folder
 set viminfo+=n~/.vim/viminfo
 
+" show matching brackets
+set showmatch
+
 " map some keys we need on a regular basis
 map <F8> :w<CR>:!uncrustify -c ~/.uncrustify.config -f % -o %<CR>:!rm -f %.unc-backup*<CR>:e<CR>
 map <F11> :w<CR>:!aspell -c % --mode=email --lang de_DE<CR>:e<CR>
