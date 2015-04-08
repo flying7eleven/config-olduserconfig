@@ -9,6 +9,7 @@ mkdir -p $HOME/.config/mpd/
 ln -s $HOME/.config/my-user-configurations/shell/zshrc $HOME/.zshrc
 ln -s $HOME/.config/my-user-configurations/shell/zsh_profile $HOME/.zsh_profile
 ln -s $HOME/.config/my-user-configurations/terminator $HOME/.config/terminator/config
+ln -s $HOME/.config/my-user-configurations/vim $HOME/.vim
 ln -s $HOME/.config/my-user-configurations/vimrc $HOME/.vimrc
 ln -s $HOME/.config/my-user-configurations/xinitrc $HOME/.xinitrc
 ln -s $HOME/.config/my-user-configurations/xprofile $HOME/.xprofile
