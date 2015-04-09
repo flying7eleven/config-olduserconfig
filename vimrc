@@ -8,16 +8,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 
-"
+" the list of plugins we want to install for us
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/syntastic'
-Plugin 'majutsushi/tagbar'
-Plugin 'ap/vim-css-color'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'ap/vim-css-color'
+"Plugin 'honza/vim-snippets'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'scrooloose/syntastic'
 
 "
 call vundle#end()
