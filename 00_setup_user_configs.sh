@@ -20,6 +20,7 @@ ln -s $HOME/.config/my-user-configurations/mailcap $HOME/.mailcap
 ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.config
 ln -s $HOME/.config/my-user-configurations/conkyrc $HOME/.conkyrc
 ln -s $HOME/.config/my-user-configurations/mpd.conf $HOME/.config/mpd/mpd.conf
+ln -s $HOME/.config/my-user-configurations/mairixrc $HOME/.mairixrc
 
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh
