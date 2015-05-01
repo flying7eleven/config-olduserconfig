@@ -9,6 +9,9 @@ export PATH=$PATH:/opt/minecraft
 # make sure that the ruby gems are found
 export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
+# enable nVidia OpenGL threaded optimizations
+export __GL_THREADED_OPTIMIZATIONS=1
+
 # fix a bug with awesome and java applications
 wmname LG3D
 
