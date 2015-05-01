@@ -6,6 +6,9 @@ export PATH=$PATH:$HOME/.config/my-user-configurations/scripts
 # be sure thet minecraft can be found
 export PATH=$PATH:/opt/minecraft
 
+# make sure that the ruby gems are found
+export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
 # fix a bug with awesome and java applications
 wmname LG3D
 
