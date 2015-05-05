@@ -1,5 +1,5 @@
 # local Maildir
-base=~/.mutt/maildir/FzJuelich
+base=~/.mutt/maildir/work
 database=~/.mutt/mairixdb
 
 # set this to a list of maildir folders within 'base'.

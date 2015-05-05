@@ -21,6 +21,7 @@ ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.c
 ln -s $HOME/.config/my-user-configurations/conkyrc $HOME/.conkyrc
 ln -s $HOME/.config/my-user-configurations/mpd.conf $HOME/.config/mpd/mpd.conf
 ln -s $HOME/.config/my-user-configurations/mairixrc $HOME/.mairixrc
+ln -s $HOME/.config/my-user-configurations/muttrc $HOME/.muttrc
 
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh
