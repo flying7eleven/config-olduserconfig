@@ -9,8 +9,6 @@ mkdir -p $HOME/.config/mpd/
 ln -s $HOME/.config/my-user-configurations/shell/zshrc $HOME/.zshrc
 ln -s $HOME/.config/my-user-configurations/shell/zsh_profile $HOME/.zsh_profile
 ln -s $HOME/.config/my-user-configurations/terminator $HOME/.config/terminator/config
-ln -s $HOME/.config/my-user-configurations/vim $HOME/.vim
-ln -s $HOME/.config/my-user-configurations/vimrc $HOME/.vimrc
 ln -s $HOME/.config/my-user-configurations/xinitrc $HOME/.xinitrc
 ln -s $HOME/.config/my-user-configurations/xprofile $HOME/.xprofile
 ln -s $HOME/.config/my-user-configurations/taskrc $HOME/.taskrc
@@ -20,6 +18,8 @@ ln -s $HOME/.config/my-user-configurations/mailcap $HOME/.mailcap
 ln -s $HOME/.config/my-user-configurations/uncrustify.config $HOME/.uncrustify.config
 ln -s $HOME/.config/my-user-configurations/conkyrc $HOME/.conkyrc
 ln -s $HOME/.config/my-user-configurations/mpd.conf $HOME/.config/mpd/mpd.conf
+ln -s $HOME/.config/my-user-configurations/mairixrc $HOME/.mairixrc
+ln -s $HOME/.config/my-user-configurations/muttrc $HOME/.muttrc
 
 # change the default shell for this user to the ZSH
 chsh -s /bin/zsh

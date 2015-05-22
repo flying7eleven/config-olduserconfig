@@ -1,0 +1,12 @@
+# local Maildir
+base=~/.mutt/maildir/work
+database=~/.mutt/mairixdb
+
+# set this to a list of maildir folders within 'base'.
+maildir=INBOX
+maildir=Sent
+maildir=Sent Items
+
+# drop search results here:
+mfolder=Search
+mformat=mbox

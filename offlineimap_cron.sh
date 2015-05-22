@@ -17,7 +17,7 @@ echo "DISPLAY=$dply" > /home/$user/.offlineimap.log
 echo "DBUS_SESSION_BUS_ADDRESS=$dbus" >> /home/$user/.offlineimap.log
 echo "USER=$user" >> /home/$user/.offlineimap.log
 offlineimap -l /home/$user/.offlineimap.log
-newMails=`find /home/$user/.mutt/maildir/FZJ/INBOX/new/ -type f -print | wc -l`
+newMails=`find /home/$user/.mutt/maildir/work/INBOX/new/ -type f -print | wc -l`
 if [ $newMails -gt 0 ]; then
 	lastId=`echo "local naughty = require(\"naughty\"); return naughty.notify({title = \"New email\", text = \"Your local inbox has $newMails new message(s)!\", timeout = 0, replaces_id = $idToReplace}).id" | awesome-client -`
 fi

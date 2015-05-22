@@ -1,0 +1,29 @@
+set editor="vim"
+set mbox_type=Maildir
+set folder = "~/.mutt/maildir"
+source ~/.mutt/mailboxes
+
+set spoolfile = "+work/INBOX"
+set record = "+work/Sent"
+set postponed = "+work/Drafts"
+set copy = yes
+set ssl_starttls = yes
+set smtp_url = "smtp://t.huetz@mail.fz-juelich.de:587"
+set from = "t.huetz@fz-juelich.de"
+set signature="~/.signature"
+set realname = 'Tim Hütz'
+set my_name = "Tim Hütz"
+set print_command="muttprint -i off -D -P A4 -p TO_FILE:/tmp/$USER.ps && okular /tmp/$USER.ps"
+
+auto_view text/html
+
+set query_command = "abook --mutt-query '%s'"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+macro index,pager L "<change-folder-readonly>~/.mutt/maildir/work/Search<enter><shell-escape>mairix " "search via mairix"
+unset wait_key # do not require additional enter for shell commands
+
+set sort=last-date-received       
+
+#set query_command= "abook --mutt-query '%s'" 
+#macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
