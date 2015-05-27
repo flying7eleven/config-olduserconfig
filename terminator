@@ -8,9 +8,11 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    custom_command = 'echo \"foo#bar\"'
+    background_darkness = 0.78
     scrollback_lines = 1000000
+    background_type = transparent
     background_image = None
+    custom_command = 'echo \"foo#bar\"'
     font = Source Code Pro Medium 10
     scrollback_infinite = True
 [layouts]
