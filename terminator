@@ -6,6 +6,7 @@
   full_screen = <Ctrl><Shift>F11
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     use_system_font = False
     custom_command = 'echo \"foo#bar\"'
     scrollback_lines = 1000000
