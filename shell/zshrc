@@ -67,3 +67,6 @@ if [[ -n "${TERMINATOR_UUID}" && ! -n "${TMUX}" ]]; then
 	tmux
 fi
 
+# export the ruby gems path
+export PATH=$PATH:/home/thuetz/.gem/ruby/2.2.0/bin
+
