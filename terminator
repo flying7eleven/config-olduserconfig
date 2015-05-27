@@ -3,7 +3,31 @@
   handle_size = 0
   inactive_color_offset = 1.31
 [keybindings]
-  full_screen = <Ctrl><Shift>F11
+  full_screen = None
+  group_tab = None
+  resize_left = None
+  rotate_ccw = None
+  move_tab_left = None
+  go_right = None
+  resize_right = None
+  group_all = None
+  toggle_zoom = None
+  scaled_zoom = None
+  resize_down = None
+  move_tab_right = None
+  ungroup_all = None
+  ungroup_tab = None
+  go_prev = None
+  new_window = None
+  new_terminator = None
+  go_left = None
+  hide_window = None
+  go_up = None
+  resize_up = None
+  rotate_cw = None
+  go_down = None
+  go_next = None
+  toggle_scrollbar = None
 [profiles]
   [[default]]
     scrollbar_position = hidden
