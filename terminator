@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = ,
+  window_state = maximise
   handle_size = 0
   inactive_color_offset = 1.31
 [keybindings]
