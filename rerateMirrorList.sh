@@ -4,6 +4,9 @@ pacnewMirrorlist="/etc/pacman.d/mirrorlist.pacnew"
 tmpMirrorlist="/tmp/mirrorlist.tmp"
 tmpMirrorlistRated="/tmp/mirrorlist.rated.tmp"
 
+# invalidate the current sudo session (that we do no mess up stuff later)
+sudo -k
+
 # clear the terminal
 clear
 
