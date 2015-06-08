@@ -4,6 +4,9 @@ pacnewMirrorlist="/etc/pacman.d/mirrorlist.pacnew"
 tmpMirrorlist="/tmp/mirrorlist.tmp"
 tmpMirrorlistRated="/tmp/mirrorlist.rated.tmp"
 
+# clear the terminal
+clear
+
 # if there is new pacnew file, do not execute this script
 if [ ! -e "$pacnewMirrorlist" ]
 then
