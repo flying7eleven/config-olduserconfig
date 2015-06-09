@@ -64,7 +64,8 @@ stty icrnl
 
 # every terminator session should atomatically start a tmux session
 if [[ -n "${TERMINATOR_UUID}" && ! -n "${TMUX}" ]]; then
-	exec tmux
+#	exec tmux
+	tmux
 fi
 
 # export the ruby gems path
